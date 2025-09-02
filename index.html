@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pratik Kalambe — Portfolio</title>
+  <meta name="description" content="Portfolio of Pratik Kalambe — Computer Engineering student at Mumbai University. Projects, skills, certificates and contact." />
+  <meta property="og:title" content="Pratik Kalambe — Portfolio" />
+  <meta property="og:description" content="Computer Engineering student at Mumbai University. Projects, skills, certificates and contact." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --brand: #0ea5e9;
+      --accent: #22c55e;
+      --ring: rgba(14,165,233,0.45);
+      --card: #111827;
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --muted: #475569;
+      --text: #0f172a;
+      --brand: #0284c7;
+      --accent: #16a34a;
+      --ring: rgba(2,132,199,0.25);
+      --card: #ffffff;
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+    }
+    *{ box-sizing:border-box }
+    html,body{ height:100% }
+    body{
+      margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; 
+      color:var(--text); 
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(14,165,233,.25), transparent 60%),
+      linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,1)), var(--bg);
+      background-attachment: fixed; line-height:1.6;
+    }
+    a{ color:var(--brand); text-decoration:none }
+    a:hover{ text-decoration:underline }
+    .container{ max-width:1100px; margin:0 auto; padding:0 20px }
+    header{
+      position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(10px);
+      background: color-mix(in oklab, var(--panel) 85%, transparent); border-bottom:1px solid color-mix(in oklab, var(--muted) 25%, transparent);
+    }
+    .nav{ display:flex; align-items:center; justify-content:space-between; height:64px }
+    .brand{ display:flex; align-items:center; gap:.75rem; font-weight:700; letter-spacing:.2px }
+    .brand .logo{ width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg, var(--brand), var(--accent)); display:grid; place-items:center; color:white; box-shadow: var(--shadow) }
+    .brand small{ color:var(--muted); font-weight:500 }
+    .nav a.btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.55rem .9rem; border:1px solid color-mix(in oklab, var(--brand) 40%, var(--muted)); border-radius:12px; text-decoration:none; font-weight:600 }
+    .nav a.btn:hover{ box-shadow:0 6px 16px var(--ring) }
+    .theme-toggle{ border:none; background:transparent; color:var(--text); cursor:pointer; border-radius:12px; padding:.45rem .6rem }
+    .theme-toggle:focus-visible{ outline:2px solid var(--ring) }
+
+    /* Hero */
+    .hero{ display:grid; grid-template-columns: 1.1fr .9fr; gap:2rem; padding:72px 0 32px }
+    .hero h1{ font-size: clamp(32px, 4vw, 52px); line-height:1.1; margin:0 0 12px; letter-spacing:-.02em }
+    .hero p.lead{ color:var(--muted); font-size: clamp(16px, 2vw, 18px) }
+    .actions{ margin-top:22px; display:flex; gap:12px; flex-wrap:wrap }
+    .btn-primary{ background:var(--brand); color:white; padding:.8rem 1rem; border-radius:12px; border: none; font-weight:700; text-decoration:none; display:inline-block; transition:.3s }
+    .btn-outline{ border:1px solid color-mix(in oklab, var(--brand) 50%, var(--muted)); color:var(--text); padding:.78rem 1rem; border-radius:12px; font-weight:700; text-decoration:none; display:inline-block; transition:.3s }
+    .btn-primary:hover{ filter:brightness(1.05); box-shadow:0 10px 25px var(--ring) }
+    .btn-outline:hover{ box-shadow:0 10px 25px var(--ring) }
+
+    .portrait{ align-self:center; justify-self:end; position:relative }
+    .portrait img{ width:min(320px, 36vw); height:min(320px, 36vw); object-fit:cover; border-radius:28px; box-shadow: var(--shadow); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent) }
+    .glow{ position:absolute; inset:auto; left:-10%; right:-10%; bottom:-10%; height:40%; filter: blur(45px); background: radial-gradient(40% 50% at 50% 50%, color-mix(in oklab, var(--brand) 45%, transparent), transparent 70%) }
+
+    /* Sections */
+    section{ padding:64px 0 }
+    h2{ font-size: clamp(26px, 3vw, 34px); margin:0 0 18px }
+    .muted{ color:var(--muted) }
+
+    .grid{ display:grid; gap:18px }
+    .grid-2{ grid-template-columns:repeat(2,1fr) }
+    .grid-3{ grid-template-columns:repeat(3,1fr) }
+
+    .card{ background:var(--card); border:1px solid color-mix(in oklab, var(--muted) 25%, transparent); padding:18px; border-radius:18px; box-shadow: var(--shadow); transition:.3s }
+    .card:hover{ box-shadow:0 0 20px var(--brand), 0 0 30px var(--accent); transform:translateY(-5px); }
+    .chip{ display:inline-flex; align-items:center; padding:.45rem .7rem; border-radius:999px; border:1px solid #22c55e; font-weight:600; font-size:.92rem; color:#00ffe0; background: rgba(0,255,224,0.05); transition: .3s; }
+    .chip:hover{ box-shadow:0 0 12px #00ffe0; transform:translateY(-2px); }
+    .chips{ display:flex; flex-wrap:wrap; gap:.5rem }
+
+    /* Timeline */
+    .timeline{ position:relative; padding-left:22px }
+    .timeline::before{ content:""; position:absolute; left:8px; top:6px; bottom:6px; width:2px; background: color-mix(in oklab, var(--muted) 30%, transparent) }
+    .tl-item{ position:relative; margin:14px 0; padding-left:12px }
+    .tl-item::before{ content:""; position:absolute; left:-8px; top:.5rem; width:10px; height:10px; background:var(--brand); border-radius:999px; box-shadow:0 0 0 4px color-mix(in oklab, var(--brand) 20%, transparent) }
+
+    /* Footer */
+    footer{ padding:32px 0 50px; color:var(--muted); font-size:.95rem; border-top:1px solid var(--accent) }
+
+    /* Responsiveness */
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .portrait{ justify-self:start }
+    }
+
+    /* Appear animations */
+    [data-animate]{ opacity:0; transform: translateY(12px); transition: all .6s ease }
+    [data-animate].in{ opacity:1; transform:none }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">PK</div>
+        <div>
+          <div>Pratik Kalambe</div>
+          <small>Computer Engineering Student</small>
+        </div>
+      </div>
+      <nav style="display:flex; align-items:center; gap:.5rem">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#skills">Skills</a>
+        <a class="btn" href="#certs">Certificates</a>
+        <a class="btn" href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" title="Toggle theme" aria-label="Toggle theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container">
+      <div>
+        <h1 data-animate>Hi, I'm Pratik 👋</h1>
+        <p class="lead" data-animate>
+          Computer Engineering student at <strong>Mumbai University</strong> — I enjoy building neat, user‑friendly things with code and solving algorithmic problems.
+        </p>
+        <div class="actions" data-animate>
+          <a class="btn-primary" href="#projects">View Projects</a>
+          <a class="btn-outline" href="mailto:kalambepratik29@gmail.com">Email Me</a>
+          <a class="btn-outline" href="https://www.linkedin.com/in/pratik-kalambe-4492a036b/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait" aria-label="Profile photo">
+        <img id="avatar" src="https://media.licdn.com/dms/image/v2/D4E03AQHdfeabvT2iLg/profile-displayphoto-crop_800_800/B4EZexqajoHwAU-/0/1751032378213?e=1759968000&v=beta&t=w3k3J02DNCO6XZ9icVjpfMXP053LCamxPAuzK6kp1Rk" alt="Portrait of Pratik Kalambe" />
+        <div class="glow" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="container">
+      <h2 data-animate>About</h2>
+      <div class="grid grid-2">
+        <div class="card" data-animate>
+          <p class="typing"></p>
+          <p class="muted">Currently exploring: modern JavaScript patterns, accessible UI, and performance-friendly animations. 🚀</p>
+        </div>
+        <div class="card" data-animate>
+          <h3 style="margin-top:0">Highlights</h3>
+          <ul style="margin:0 0 8px 18px">
+            <li>Strong fundamentals in <b>DSA</b> and <b>OOP</b>. 💡</li>
+            <li>Comfortable with end‑to‑end front‑end builds in <b>HTML/CSS/JS</b>. 🖥️</li>
+            <li>Team player with communication & leadership experience from college projects. 🤝</li>
+          </ul>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">Open to Internships</span>
+            <span class="chip">Hackathons</span>
+            <span class="chip">Collaborations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="container">
+      <h2 data-animate>Skills</h2>
+      <div class="grid grid-2">
+        <div class="card" data-animate>
+          <h3 style="margin-top:0">Technical</h3>
+          <div class="chips">
+            <span class="chip"><i class="fab fa-java"></i> Java</span>
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip"><i class="fab fa-python"></i> Python</span>
+            <span class="chip"><i class="fab fa-html5"></i> HTML</span>
+            <span class="chip"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Data Structures</span>
+            <span class="chip">Algorithms</span>
+          </div>
+        </div>
+        <div class="card" data-animate>
+          <h3 style="margin-top:0">Soft</h3>
+          <div class="chips">
+            <span class="chip">Communication</span>
+            <span class="chip">Technical Drawings</span>
+            <span class="chip">Leadership</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Creative Thinking</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="container">
+      <h2 data-animate>Projects</h2>
+      <div class="grid grid-3">
+        <article class="card" data-animate>
+          <h3 style="margin:0 0 6px">AI Info Agent 🤖</h3>
+          <p class="muted">Currently building an AI agent that extracts paragraphic information and responds to queries. 🚀</p>
+          <div class="chips" style="margin-top:8px">
+            <span class="chip">Python</span>
+            <span class="chip">AI</span>
+            <span class="chip">NLP</span>
+          </div>
+        </article>
+        <article class="card" data-animate>
+          <h3 style="margin:0 0 6px">On‑Going Projects</h3>
+          <p class="muted">Portfolio website is under construction — more projects coming soon! 🌱</p>
+        </article>
+        <article class="card" data-animate>
+          <h3 style="margin:0 0 6px">Starter Ideas</h3>
+          <ul style="margin:0 0 0 18px">
+            <li>Minimal task tracker (vanilla JS)</li>
+            <li>DSA visualizer (sorting/pathfinding)</li>
+            <li>Portfolio CMS (JSON-driven sections)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certs" class="container">
+      <h2 data-animate>Certificates</h2>
+      <div class="grid grid-2">
+        <div class="card" data-animate>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+            <div>
+              <h3 style="margin:0">Web Development in Python</h3>
+              <p style="margin:.25rem 0 0" class="muted">Issued by Learntube.ai</p>
+            </div>
+            <a class="btn-outline" target="_blank" rel="noopener" href="https://media.licdn.com/dms/image/v2/D4D2DAQFA__KTcXL1_w/profile-treasury-image-shrink_800_800/B4DZeB5YDuGYAk-/0/1750230994315?e=1757412000&v=beta&t=GROpsXOnQtIm_-nCwh6VU9nYDhYXw4QYRfeVJ0-vlX8">View Certificate</a>
+          </div>
+        </div>
+        <div class="card" data-animate>
+          <p style="margin:0">More certificates and achievements will appear here as I complete them. 🌟</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="container">
+      <h2 data-animate>Education</h2>
+      <div class="timeline" data-animate>
+        <div class="tl-item">
+          <h3>Bachelor of Engineering — Computer Engineering</h3>
+          <p class="muted">Mumbai University, 2024-2028 🎓</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2 data-animate>Contact</h2>
+      <div class="grid grid-2">
+        <div class="card" data-animate>
+          <p style="margin-top:0">Open to internships, freelance gigs, and collaborations. The fastest way to reach me is via email. ✉️</p>
+          <ul style="margin:0 0 0 18px">
+            <li>Email: <a href="mailto:kalambepratik29@gmail.com">kalambepratik29@gmail.com</a></li>
+            <li>LinkedIn: <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/pratik-kalambe-4492a036b/">/in/pratik-kalambe</a></li>
+          </ul>
+        </div>
+        <div class="card" data-animate>
+          <form onsubmit="return openMail(event)">
+            <label for="subject" style="display:block; font-weight:600">Subject</label>
+            <input id="subject" required placeholder="Let's connect" style="width:100%; margin:.35rem 0 1rem; padding:.8rem 1rem; border-radius:12px; border:1px solid #22c55e; background:var(--panel); color:var(--text)">
+            <label for="message" style="display:block; font-weight:600">Message</label>
+            <textarea id="message" required rows="4" placeholder="Hi Pratik, ..." style="width:100%; margin:.35rem 0 1rem; padding:.8rem 1rem; border-radius:12px; border:1px solid #22c55e; background:var(--panel); color:var(--text)"></textarea>
+            <button class="btn-primary" type="submit">Send Email</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px">
+      <div>© <span id="year"></span> Pratik Kalambe. All rights reserved.</div>
+      <div class="muted">Built with ❤️ using HTML, CSS & JavaScript. Portfolio is ongoing… 🚧</div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle with localStorage
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const prefer = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const saved = localStorage.getItem('theme') || prefer;
+    root.setAttribute('data-theme', saved);
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Appear on scroll
+    const els = document.querySelectorAll('[data-animate]');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.16 });
+    els.forEach(el => io.observe(el));
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form -> mailto
+    function openMail(ev){
+      ev.preventDefault();
+      const subject = encodeURIComponent(document.getElementById('subject').value.trim());
+      const body = encodeURIComponent(document.getElementById('message').value.trim());
+      window.location.href = `mailto:kalambepratik29@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+
+    // Avatar fallback if LinkedIn blocks hotlink
+    const avatar = document.getElementById('avatar');
+    avatar.addEventListener('error', () => {
+      const canvas = document.createElement('canvas');
+      const size = 320; canvas.width = size; canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const g = ctx.createLinearGradient(0,0,size,size);
+      g.addColorStop(0,'#0ea5e9'); g.addColorStop(1,'#22c55e');
+      ctx.fillStyle = g; ctx.fillRect(0,0,size,size);
+      ctx.fillStyle = 'rgba(255,255,255,.9)';
+      ctx.font = 'bold 140px Inter, system-ui, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('PK', size/2, size/2+8);
+      avatar.src = canvas.toDataURL();
+    });
+
+    // Typing animation
+    const typingText = "👋 Hi! I'm Pratik Kalambe, a Computer Engineering student passionate about AI, web development, and building creative solutions. This portfolio is ongoing — lots more to add! ✨";
+    let i = 0;
+    const typingElement = document.querySelector(".typing");
+    function type() {
+      if(i < typingText.length){
+        typingElement.innerHTML += typingText.charAt(i);
+        i++;
+        setTimeout(type, 40);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
