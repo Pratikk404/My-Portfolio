@@ -295,7 +295,6 @@
   </footer>
 
   <script>
-    // Theme toggle with localStorage
     const root = document.documentElement;
     const toggle = document.getElementById('themeToggle');
     const prefer = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
@@ -307,17 +306,17 @@
       localStorage.setItem('theme', next);
     });
 
-    // Appear on scroll
+    
     const els = document.querySelectorAll('[data-animate]');
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
     }, { threshold: 0.16 });
     els.forEach(el => io.observe(el));
 
-    // Footer year
+    
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Contact form -> mailto
+    
     function openMail(ev){
       ev.preventDefault();
       const subject = encodeURIComponent(document.getElementById('subject').value.trim());
@@ -357,3 +356,4 @@
   </script>
 </body>
 </html>
+
