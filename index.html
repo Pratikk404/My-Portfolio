@@ -104,6 +104,12 @@
       .hero{ grid-template-columns: 1fr; }
       .portrait{ justify-self:start }
     }
+    @media (max-width: 768px) {
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* Appear animations */
     [data-animate]{ opacity:0; transform: translateY(12px); transition: all .6s ease }
@@ -356,4 +362,5 @@
   </script>
 </body>
 </html>
+
 
