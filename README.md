@@ -47,7 +47,6 @@ Font Awesome 6.4.0
 Hosting
 GitHub Pages
 
-📁 Project Structure
 My-Portfolio/
 │
 ├── assets/
@@ -70,7 +69,6 @@ My-Portfolio/
 ├── index.html
 ├── README.md
 └── LICENSE
-
 
 Structure Philosophy
 Modular CSS and JS for clarity
