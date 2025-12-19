@@ -47,27 +47,29 @@ Font Awesome 6.4.0
 Hosting
 GitHub Pages
 
+### 📁 Project Structure
+
 My-Portfolio/
 ├── assets/
-│   ├── css/
-│   │   ├── base.css              - Global resets and base styles
-│   │   ├── theme.css             - Theme variables (dark/light mode)
-│   │   └── animations.css        - Reusable animations and transitions
-│   │
-│   ├── js/
-│   │   ├── main.js               - Core interaction logic
-│   │   └── theme-toggle.js       - Dark/light theme toggle handler
-│   │
-│   └── images/
-│       ├── profile.jpg           - Profile picture
-│       └── screenshots/
-│           ├── preview.png       - Hero section preview
-│           ├── light-theme.png   - Light theme desktop view
-│           └── mobile-view.png   - Mobile responsive layout
+│ ├── css/
+│ │ ├── base.css - Global resets and base styles
+│ │ ├── theme.css - Theme variables (dark/light mode)
+│ │ └── animations.css - Reusable animations and transitions
+│ │
+│ ├── js/
+│ │ ├── main.js - Core interaction logic
+│ │ └── theme-toggle.js - Dark/light theme toggle handler
+│ │
+│ └── images/
+│ ├── profile.jpg - Profile picture
+│ └── screenshots/
+│ ├── preview.png - Hero section preview
+│ ├── light-theme.png - Light theme desktop view
+│ └── mobile-view.png - Mobile responsive layout
 │
-├── index.html                     - Main HTML entry point
-├── README.md                      - Project documentation
-└── LICENSE                        - MIT license
+├── index.html - Main HTML entry point
+├── README.md - Project documentation
+└── LICENSE - MIT license
 
 
 Structure Philosophy
