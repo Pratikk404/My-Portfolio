@@ -48,27 +48,27 @@ Hosting
 GitHub Pages
 
 My-Portfolio/
-│
 ├── assets/
 │   ├── css/
-│   │   ├── base.css
-│   │   ├── theme.css
-│   │   └── animations.css
+│   │   ├── base.css              - Global resets and base styles
+│   │   ├── theme.css             - Theme variables (dark/light mode)
+│   │   └── animations.css        - Reusable animations and transitions
 │   │
 │   ├── js/
-│   │   ├── main.js
-│   │   └── theme-toggle.js
+│   │   ├── main.js               - Core interaction logic
+│   │   └── theme-toggle.js       - Dark/light theme toggle handler
 │   │
 │   └── images/
-│       ├── profile.jpg
+│       ├── profile.jpg           - Profile picture
 │       └── screenshots/
-│           ├── preview.png
-│           ├── light-theme.png
-│           └── mobile-view.png
+│           ├── preview.png       - Hero section preview
+│           ├── light-theme.png   - Light theme desktop view
+│           └── mobile-view.png   - Mobile responsive layout
 │
-├── index.html
-├── README.md
-└── LICENSE
+├── index.html                     - Main HTML entry point
+├── README.md                      - Project documentation
+└── LICENSE                        - MIT license
+
 
 Structure Philosophy
 Modular CSS and JS for clarity
